@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	h1= title
+	ul
+		- each todo in todos
+			li #{todo.title} -
+				em=todo.assignee
+				a(href="/todos/delete/#{todo._id}") delete
+				a(href="/todos/done/#{todo._id}") done
+
